@@ -705,6 +705,9 @@ class MatrixHttpApi(object):
         if "Content-Type" not in headers:
             headers["Content-Type"] = "application/json"
 
+        if "Client-Validation" not in headers:
+            headers["Client-Validation"] = "web"
+
         if self.use_authorization_header:
             headers["Authorization"] = 'Bearer %s' % self.token
         else:
